@@ -23,18 +23,24 @@ class CityList extends Component {
     this.props.setCities();
  }
 
-  render(){
+  renderList(){
     return this.props.cities.map((city, index) => {
       return(
         <City
-        name={city.name}
-        address={city.address}
-        slug={city.slug}
+        city={city}
         index={index}
         />
       )
     })
   }
-}
+
+  render() {
+    return (
+      <ul className="list-group cities">
+        {this.renderList()}
+      </ul>
+      )
+  }
+ }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CityList);
