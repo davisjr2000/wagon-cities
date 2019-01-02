@@ -1,8 +1,10 @@
-export default function(state, action) {
+export default function(state = null, action) {
   switch (action.type) {
-    case 'CITY_SELECTED':
+    case 'CITY_SELECTED': {
       return action.payload;
-    default:
+    }
+    default: {
       return state;
+    }
   }
 }
